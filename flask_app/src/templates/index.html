@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Virtual Hair Colour Try-On{% endblock %}
+
+{% block base %}
+<div class="w-full h-full flex flex-col md:gap-6 gap-5 md:p-8 p-4 bg-slate-100">
+    <!-- title section -->
+    <div class="flex flex-col h-full w-full gap-1 md:justify-center justify-start md:text-center text-start">
+        <h1 class="md:font-bold font-extrabold md:text-6xl text-4xl">Virtual Hair Colour Try-On</h1>
+        <p class="md:text-lg text-sm ">Try different hair colors on your face or on a photo of you</p>
+    </div>
+
+    <!-- about section -->
+    <div class="flex flex-col justify-center w-full h-full md:items-center md:text-base text-sm ">
+        <p>The Virtual Hair Colour Try-On System for Hair Makeovers is a <b>deep learning</b> based application that
+            allows
+            users to experiment with different hair colors on their photos. By leveraging a <b>U-Net</b> architecture
+            for
+            <b>image
+                segmentation</b>, this system precisely isolates the hair region and applies various hair colors,
+            enabling a
+            realistic makeover effect.
+        </p>
+
+        <!-- <p class="flex justify-end w-full md:text-base text-sm">Thanks</p> -->
+    </div>
+
+    <!-- mid section -->
+    <div class="flex md:flex-row flex-col h-full w-full gap-3 md:justify-center">
+
+        <!-- input-image section -->
+        <div class="flex flex-col h-full md:items-end items-center gap-1 rounded-md bg-slate-300">
+            <p class="flex w-full justify-center font-medium">Click to import image</p>
+            <img id="inputImage" class="h-80 w-full object-cover" src="static/images/input_001.jpg">
+
+            <div class="flex md:h-10 h-10 w-full">
+                <input id="colorInput" class="w-[40%] h-full rounded-lg" type="color" id="favcolor" name="favcolor"
+                    value="#0A463C">
+                <button id="convertBtn" class="w-80 p-2 bg-black text-white font-medium">Convert</button>
+            </div>
+        </div>
+
+        <!-- output-image section -->
+        <div class="flex flex-col h-full md:items-center items-center gap-1 rounded-md bg-slate-300">
+            <p class="flex w-full justify-center font-medium">Output image</p>
+            <img id="outputImage" class="h-80 w-full object-cover" src="static/images/result_001.jpg">
+            <div class="flex md:h-10 h-10 w-full">
+                <button id="downloadBtn" class="w-full p-2 bg-black text-white font-medium">Download</button>
+            </div>
+        </div>
+
+        <!-- technologies used section -->
+        <div class="flex flex-col md:items-start items-center gap-1">
+            <p class="flex flex-row w-full justify-start px-2 rounded-t-md bg-slate-300 font-medium">Technologies Used
+            </p>
+            <p class="md:text-base text-sm  bg-slate-200 p-2">
+                Deep Learning: PyTorch, U-Net (for hair segmentation)<br>
+                Model Conversion: Onnx (for model optimization and deployment)<br>
+                Web Framework: Flask (for building the web app)<br>
+                Deployment: Docker, GCP (for containerization and scalability)<br>
+                <br>
+                <a href="https://github.com/playatanu/hair-color-try-on">Project repository</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- footer section -->
+    <div class="flex flex-row h-full justify-center gap-1">
+        <a href="https://www.linkedin.com/feed/">Atanu Debnath</a> - <a
+            href="mailto:playatanu@gmail.com">playatanu@gmail.com</a>
+    </div>
+
+</div>
+
+{% endblock base %}
